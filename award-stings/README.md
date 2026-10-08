@@ -1,7 +1,7 @@
 # Award Stings
 
 30 walk-up stings for award winners, each starting at the song's chorus or drop
-instead of the intro. Every clip is 15 seconds long, matched for loudness, and
+instead of the intro. Every clip is 25 seconds long, matched for loudness, and
 fades out cleanly.
 
 ## The tracks
@@ -31,8 +31,8 @@ the list, e.g. `stings/01 - Sabrina Carpenter - Espresso.mp3`.
 
 | Option | Default | What it does |
 |---|---|---|
-| `--length 20` | 15 | Sting length in seconds |
-| `--fade 4` | 3 | Fade-out length in seconds |
+| `--length 15` | 25 | Sting length in seconds |
+| `--fade 3` | 5 | Fade-out length in seconds |
 | `--lead-in 1` | 0.5 | How many seconds before the chorus hit the clip starts |
 | `--no-refine` | off | Use the CSV timestamps exactly as written |
 

@@ -94,8 +94,8 @@ def main():
     p.add_argument("input_dir", type=Path, help="folder containing your full-length songs")
     p.add_argument("output_dir", type=Path, help="where the MP3 stings are written")
     p.add_argument("--tracklist", type=Path, default=Path(__file__).with_name("tracklist.csv"))
-    p.add_argument("--length", type=float, default=15.0, help="sting length in seconds (default 15)")
-    p.add_argument("--fade", type=float, default=3.0, help="fade-out length in seconds (default 3)")
+    p.add_argument("--length", type=float, default=25.0, help="sting length in seconds (default 25)")
+    p.add_argument("--fade", type=float, default=5.0, help="fade-out length in seconds (default 5)")
     p.add_argument("--lead-in", type=float, default=0.5,
                    help="seconds to start before the chorus hit so it doesn't feel clipped (default 0.5)")
     p.add_argument("--no-refine", action="store_true", help="use tracklist timestamps exactly as written")
