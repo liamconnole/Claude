@@ -12,7 +12,7 @@ crowd-pleasers everyone knows (Mr. Brightside, Don't Stop Me Now, Celebration).
 
 ## Making the MP3s
 
-1. Put the full songs in a folder, e.g. `songs/`. Use copies you've bought or are
+1. Put the full songs in a folder, e.g. `songs/`. Use copies you've bought (e.g. iTunes or Amazon Music AU) or are
    licensed to use. Any common format works (mp3, m4a, flac, wav…). The filename
    only needs to contain the song title, e.g. `Espresso.mp3` or
    `Dua Lipa - Houdini.m4a`.
@@ -47,5 +47,6 @@ somewhere you don't like, edit `sting_start` in the CSV and re-run with
 
 ## Licensing note
 
-Playing commercial music at a public event usually needs a licence. In the UK
-that's normally the venue's PPL PRS licence, so check with your venue first.
+Playing commercial music at a public event in Australia is usually covered by a
+OneMusic Australia licence (the joint APRA AMCOS and PPCA licence). Most venues
+already hold one, so check with your venue first.
