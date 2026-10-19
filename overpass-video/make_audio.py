@@ -15,6 +15,7 @@ VOICES = {
     "rachel": ("en-NZ-MollyNeural", "+6%", "+0Hz"),
     "aryav": ("en-IN-PrabhatNeural", "+4%", "+0Hz"),
     "mick": ("en-NZ-MitchellNeural", "+2%", "-6Hz"),
+    "steve": ("en-GB-RyanNeural", "+4%", "+0Hz"),
 }
 FPS = 25
 

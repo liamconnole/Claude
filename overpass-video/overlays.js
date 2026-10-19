@@ -2,7 +2,7 @@
 // Each episode defines RENDER (scene name -> renderer) and PIP.
 const WHO = {
   mod: ['MODERATOR', COL.navy], ang: ['ANGELO', COL.teal], news: ['NEWS READER', COL.red],
-  vince: ['VINCE', '#5a6a8a'], rachel: ['RACHEL', COL.orange], aryav: ['ARYAV', '#3c9a3c'], mick: ['MICK', '#d9822b'],
+  vince: ['VINCE', '#5a6a8a'], rachel: ['RACHEL', COL.orange], aryav: ['ARYAV', '#3c9a3c'], mick: ['MICK', '#d9822b'], steve: ['STEVE', COL.teal],
 };
 function captions(t) {
   const c = TL.captions.find(c => t >= c.t0 && t < c.t1);

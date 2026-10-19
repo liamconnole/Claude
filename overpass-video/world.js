@@ -1,6 +1,5 @@
 // Top-down crash world shared by every episode. Needs E.carCut, E.brake, E.fall,
 // E.busEnter, E.swerve, E.scrape, E.busStop in the episode timeline.
-const skyGrad = (id, a, b) => `<defs><linearGradient id="${id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${a}"/><stop offset="1" stop-color="${b}"/></linearGradient></defs>`;
 const CRASH_T0 = E.carCut - 2.24;
 // ===================== the crash world (top-down) =====================
 const CW = { outer: 320, inner: 420, wbInner: 552, wbOuter: 652, barrier: 486 };
