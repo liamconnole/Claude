@@ -1,5 +1,7 @@
-"""Generate voiceover clips, word timings and mouth envelopes for The Overpass."""
-import asyncio, json, subprocess, sys
+"""Generate voiceover clips, word timings and mouth envelopes for The Overpass.
+
+usage: python3 make_audio.py [episode_dir]   (reads lines.json, writes audio/ there)"""
+import asyncio, json, os, subprocess, sys
 import certifi
 certifi.where = lambda: "/root/.ccr/ca-bundle.crt"  # trust the session proxy CA
 import edge_tts
@@ -9,6 +11,10 @@ VOICES = {
     "mod": ("en-AU-WilliamMultilingualNeural", "+4%", "+0Hz"),
     "ang": ("en-NZ-MitchellNeural", "+6%", "-2Hz"),
     "news": ("en-AU-NatashaNeural", "+10%", "+0Hz"),
+    "vince": ("en-GB-ThomasNeural", "+4%", "-2Hz"),
+    "rachel": ("en-NZ-MollyNeural", "+6%", "+0Hz"),
+    "aryav": ("en-IN-PrabhatNeural", "+4%", "+0Hz"),
+    "mick": ("en-NZ-MitchellNeural", "+2%", "-6Hz"),
 }
 FPS = 25
 
@@ -43,4 +49,5 @@ async def main():
         print(cid, round(out[-1]["dur"], 2))
     json.dump(out, open("audio/clips.json", "w"))
 
+os.chdir(sys.argv[1] if len(sys.argv) > 1 else os.path.dirname(os.path.abspath(__file__)))
 asyncio.run(main())

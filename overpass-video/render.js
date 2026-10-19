@@ -1,5 +1,6 @@
 // Render frames of index.html with Playwright and pipe them to ffmpeg.
 // usage: node render.js out.mp4 [startSec endSec] | node render.js --stills dir t1 t2 ...
+// Set EP_HTML to render another episode's page (default: ./index.html).
 const { chromium } = require('playwright');
 const { spawn } = require('child_process');
 const path = require('path');
@@ -9,7 +10,7 @@ const path = require('path');
   const browser = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium' });
   const page = await browser.newPage({ viewport: { width: 1920, height: 1080 } });
   page.on('pageerror', e => { console.error('PAGE ERROR', e.message); process.exit(1); });
-  await page.goto('file://' + path.resolve(__dirname, 'index.html'));
+  await page.goto('file://' + path.resolve(process.env.EP_HTML || path.join(__dirname, 'index.html')));
   await page.evaluate(() => window.fontsReady);
   if (args[0] === '--stills') {
     const dir = args[1];

@@ -75,6 +75,10 @@ const CHARS = {
   kid3:   { skin: '#f5d6c0', hair: 'bob', hairCol: '#5a3a22', shirt: '#ffd23f', lashes: true },
   cop:    { skin: '#e9b98f', hair: 'short', hairCol: '#3a2a1a', shirt: '#2d4f9e', hat: ['police', '#1b2a5a'] },
   camera: { skin: '#c98b62', hair: 'short', hairCol: '#222', shirt: '#555', hat: ['cap', '#d33'] },
+  worker: { skin: '#e9b98f', hair: 'short', hairCol: '#4a3a2a', shirt: '#5b6b8c', vest: '#ff7a1a', hat: ['hardhat', '#ffffff'], beard: '#4a3a2a', logo: 'IRONCLAD' },
+  d1: { skin: '#d9a57a', hair: 'short', hairCol: '#2b2420', shirt: '#3a6ea5', vest: '#c6f02a', hat: ['cap', '#26315c'], mo: true, moCol: '#2b2420' },
+  d2: { skin: '#f2c6a0', hair: 'spiky', hairCol: '#c98b3a', shirt: '#8a3a3a', vest: '#ff7a1a', beard: '#c98b3a' },
+  d3: { skin: '#8d5a3b', hair: 'bob', hairCol: '#1d1a1a', shirt: '#2a9d8f', vest: '#c6f02a', lashes: true },
   reporter: { skin: '#f3cdb0', hair: 'ponytail', hairCol: '#3b2414', shirt: '#7b4fd6', lips: true, lashes: true },
 };
 
@@ -193,6 +197,8 @@ function person(c, o = {}) {
   if (pose === 'cheer') { rightArm = arm(86, 30, 150, -40, 130 + wv * .3, -150); leftArm = arm(-86, 30, -150, -40, -130 - wv * .3, -150); }
   if (pose === 'point') rightArm = arm(86, 30, 170, 40, 230, -20);
   if (pose === 'flag') rightArm = arm(86, 30, 150, -20, 140, -130);
+  if (pose === 'phone') rightArm = arm(86, 30, 160, 10, 74, -96);
+  if (pose === 'shrug') { rightArm = arm(86, 30, 180, 80, 180, -10 + wv * .3); leftArm = arm(-86, 30, -180, 80, -180, -10 - wv * .3); }
   s += `<rect x="-22" y="-40" width="44" height="50" fill="${c.skin}" ${st}/>`;
   s += leftArm + rightArm;
   s += `<path d="M-100 210 L-100 70 Q-100 0 -40 -6 L40 -6 Q100 0 100 70 L100 210 Z" fill="${c.shirt}" ${st}/>`;
@@ -224,6 +230,7 @@ function person(c, o = {}) {
     s += `<g stroke="${OL}" stroke-width="2">${cells}</g>`;
   }
   s += G('translate(0,-110)', head(c, o));
+  if (pose === 'phone') s += `<rect x="48" y="-176" width="38" height="70" rx="8" fill="#333" stroke="${OL}" stroke-width="5" transform="rotate(14 67 -141)"/><circle cx="74" cy="-96" r="19" fill="${c.skin}" stroke="${OL}" stroke-width="6"/>`;
   return s;
 }
 
